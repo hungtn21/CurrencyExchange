@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val spinnerDestinationCurrency = findViewById<Spinner>(R.id.spinnerDestinationCurrency)
 
         // Khởi tạo danh sách và adapter cho spinner
-        val currencyList = listOf("USD", "EUR", "JPY", "VND")
+        val currencyList = listOf("USD", "EUR", "JPY", "VND", "GBP") // Thêm GBP vào danh sách
         val sourceAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, currencyList)
         sourceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerSourceCurrency.adapter = sourceAdapter
@@ -91,10 +91,11 @@ class MainActivity : AppCompatActivity() {
         val destinationCurrency = destinationCurrencySpinner.selectedItem.toString()
 
         val conversionRates = mapOf(
-            "USD" to mapOf("USD" to 1.0, "EUR" to 0.85, "JPY" to 110.0, "VND" to 23000.0),
-            "EUR" to mapOf("USD" to 1.18, "EUR" to 1.0, "JPY" to 129.0, "VND" to 27000.0),
-            "JPY" to mapOf("USD" to 0.0091, "EUR" to 0.0077, "JPY" to 1.0, "VND" to 210.0),
-            "VND" to mapOf("USD" to 0.000043, "EUR" to 0.000037, "JPY" to 0.0048, "VND" to 1.0)
+            "USD" to mapOf("USD" to 1.0, "EUR" to 0.85, "JPY" to 110.0, "VND" to 23000.0, "GBP" to 0.75),
+            "EUR" to mapOf("USD" to 1.18, "EUR" to 1.0, "JPY" to 129.0, "VND" to 27000.0, "GBP" to 0.88),
+            "JPY" to mapOf("USD" to 0.0091, "EUR" to 0.0077, "JPY" to 1.0, "VND" to 210.0, "GBP" to 0.0065),
+            "VND" to mapOf("USD" to 0.000043, "EUR" to 0.000037, "JPY" to 0.0048, "VND" to 1.0, "GBP" to 0.000043),
+            "GBP" to mapOf("USD" to 1.33, "EUR" to 1.14, "JPY" to 153.0, "VND" to 30000.0, "GBP" to 1.0)
         )
 
         val rate = conversionRates[sourceCurrency]?.get(destinationCurrency) ?: 1.0
