@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- EditText và Spinner cho đồng tiền nguồn -->
+    <EditText
+        android:id="@+id/etSourceAmount"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:hint="@string/nh_p_s_ti_n"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/spinnerSourceCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="50sp" />
+
+    <!-- EditText và Spinner cho đồng tiền đích -->
+    <EditText
+        android:id="@+id/etDestinationAmount"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:hint="@string/nh_p_s_ti_n"
+        android:inputType="numberDecimal"
+        android:enabled="false" />
+
+    <Spinner
+        android:id="@+id/spinnerDestinationCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="50sp" />
+
+</LinearLayout>
